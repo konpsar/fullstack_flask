@@ -3,7 +3,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route("/")
-@app.route("/index")
-def index():
-    return "<h1>Hello World!</h1>"
+
+# I import that in the end in order not to circulate, 
+# because routes.py imports app as well
+from application import routes
